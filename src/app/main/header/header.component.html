@@ -1,5 +1,5 @@
 <mat-toolbar>
     <span style="color: white;">Thirumalai Clinic</span>
     <span class="example-spacer"></span>
-    <a mat-raised-button *ngFor="let i of social" href="{{i.url}}" class="{{i.class}}" target="_blank"></a>
+    <a *ngFor="let i of social" href="{{i.url}}" target="_blank">{{i.socialMediaName}}</a>
   </mat-toolbar>

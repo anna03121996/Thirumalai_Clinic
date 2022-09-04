@@ -12,23 +12,23 @@ export class NavBarComponent implements OnInit {
   nav = [
     {
       option:"Home",
-      route:""
+      route:"Home"
     },{
       option:"Book Appointment",
-      route:""
+      route:"BookAppointments"
     },{
       option:"About Us",
-      route:""
+      route:"AboutUs"
     },{
       option:"Why Thirumalai",
-      route:""
+      route:"WhyThirumalai"
     }
     ,{
       option:"Treatments",
-      route:""
+      route:"Treatments"
     },{
       option:"Contact Us",
-      route:""
+      route:"ContactUs"
     }
   ];
   

@@ -10,19 +10,19 @@ export class HeaderComponent implements OnInit {
   constructor() { }
   social = [
     {
-      class:"fa fa-facebook",
+      socialMediaName:"Facebook",
       url:"https://www.facebook.com/"
     },{
-      class:"fa fa-instagram",
+      socialMediaName:"Instagram",
       url:"https://www.instagram.com/"
     },{
-      class:"fa fa-linkedin",
+      socialMediaName:"Linkedin",
       url:"https://www.linkedin.com/"
     },{
-      class:"fa fa-twitter",
+      socialMediaName:"Twitter",
       url:"https://twitter.com/"
     },{
-      class:"fa fa-youtube",
+      socialMediaName:"Youtube",
       url:"https://www.youtube.com/"
     }
   ]
