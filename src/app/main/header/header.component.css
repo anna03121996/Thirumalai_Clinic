@@ -1,0 +1,16 @@
+mat-toolbar{
+    height: 3%;
+    background-color: #237e9f;
+    font-size: 15px;
+}
+mat-toolbar a{
+    text-decoration: none;
+    color: white;
+    margin: 0 1%;
+}
+mat-toolbar a:hover{
+    color: black;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
