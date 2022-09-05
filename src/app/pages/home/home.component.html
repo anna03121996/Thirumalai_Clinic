@@ -12,7 +12,7 @@
 
 <div class="booking_cards">
     <h1>Book Here</h1>
-    <div class="sub_booking_cards">
+    <div class="sub_booking_cards flex">
         <div class="booking_card" *ngFor="let item of bookings">
             <h2>{{item.title}}</h2>
             <a routerLink="{{item.route}}" mat-raised-button>Book</a>
@@ -21,3 +21,19 @@
 </div>
 
 <router-outlet></router-outlet>
+
+<div class="homeContent_1 flex">
+
+    <div>
+        <h1>A Good Place to Take Treatment
+            <br>
+            And Be Well Physically
+        </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, magni, ullam perspiciatis quos quibusdam, inventore facere odit quam eum animi consequuntur? Asperiores inventore recusandae debitis fuga soluta accusantium eius corrupti quam maiores ad ab, libero modi magni. At, perspiciatis alias.</p>
+    </div>
+   
+    <div>
+        <img src="assets/images/contentImg1.jpg" alt="content image">
+    </div>
+
+</div>
