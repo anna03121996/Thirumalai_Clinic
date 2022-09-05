@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: 'WhyThirumalai', component: WhyThirumalaiComponent },
   { path: 'Treatments', component: TreatmentsComponent },
   { path: 'ContactUs', component: ContactUsComponent },
-  { path: '', redirectTo: 'Home', pathMatch: 'full' },
+  { path: 'BookAppointments', component: BookAppointmentsComponent },
+  { path: '', redirectTo: 'Home', pathMatch: 'full' }
 
 ];
 
