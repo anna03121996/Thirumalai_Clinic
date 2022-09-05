@@ -1,1 +1,13 @@
-<p>home works!</p>
+
+
+<div class="booking_cards">
+    <h1>Wanna Book For Some</h1>
+    <div class="sub_booking_cards">
+        <div class="booking_card" *ngFor="let item of bookings">
+            <h2>{{item.title}}</h2>
+            <a routerLink="{{item.route}}" mat-raised-button>Book</a>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

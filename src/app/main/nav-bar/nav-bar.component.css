@@ -3,6 +3,6 @@ mat-toolbar{
     justify-content: space-around;
 }
 
-mat-toolbar button{
+mat-toolbar a{
     color: #237e9f;
 }

@@ -9,7 +9,24 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  bookings = [
+    {
+      title:'Book Online Consultation',
+      route:'OnlineConsultation'
+    },{
+      title:'Book Health Check',
+      route:'HealthCheck'
+    },{
+      title:'Buy Medicine',
+      route:'BuyMedicine'
+    },{
+      title:'Book Appointment',
+      route:'BookAppointments'
+    }
+  ];
 
+  //"OnlineConsultation"
+
+  ngOnInit(): void { }
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 }

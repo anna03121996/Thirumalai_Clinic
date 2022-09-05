@@ -1,0 +1,33 @@
+.booking_cards{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.booking_cards>h1{
+    padding-top: 2%;
+}
+.sub_booking_cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+}
+.booking_card{
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: #b8e4f5;
+    box-shadow: 0 0 50px #b8e4f5;
+}
+.booking_card:hover{
+    background-color: aliceblue;
+    box-shadow: 0 0 50px aliceblue;
+}
+
+.booking_card h2{
+    padding-top: 40%;
+}
+
+.booking_card a{
+    color: #237e9f;
+}

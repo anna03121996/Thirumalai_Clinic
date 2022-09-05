@@ -13,8 +13,12 @@ import { WhyThirumalaiComponent } from './pages/why-thirumalai/why-thirumalai.co
 import { TreatmentsComponent } from './pages/treatments/treatments.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { OnlineConsultationComponent } from './book/online-consultation/online-consultation.component';
+import { HealthCheckComponent } from './book/health-check/health-check.component';
+import { BuyMedicineComponent } from './book/buy-medicine/buy-medicine.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,14 +31,18 @@ import {MatButtonModule} from '@angular/material/button';
     AboutUsComponent,
     WhyThirumalaiComponent,
     TreatmentsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    OnlineConsultationComponent,
+    HealthCheckComponent,
+    BuyMedicineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
