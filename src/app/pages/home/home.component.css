@@ -31,3 +31,9 @@
 .booking_card a{
     color: #237e9f;
 }
+
+ngb-carousel img{
+    width: 40%;
+    height: 30%;
+    margin: 0 30%;
+}

@@ -7,26 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  images = [
+      'assets/images/sliderImg1.webp', 
+      'assets/images/sliderImg2.webp', 
+      'assets/images/sliderImg3.webp', 
+      'assets/images/sliderImg4.webp'
+      ];
   constructor() { }
 
   bookings = [
     {
-      title:'Book Online Consultation',
-      route:'OnlineConsultation'
-    },{
-      title:'Book Health Check',
-      route:'HealthCheck'
-    },{
-      title:'Buy Medicine',
-      route:'BuyMedicine'
-    },{
-      title:'Book Appointment',
-      route:'BookAppointments'
+      title: 'Book Online Consultation',
+      route: 'OnlineConsultation'
+    }, {
+      title: 'Book Health Check',
+      route: 'HealthCheck'
+    }, {
+      title: 'Buy Medicine',
+      route: 'BuyMedicine'
+    }, {
+      title: 'Book Appointment',
+      route: 'BookAppointments'
     }
   ];
 
-  //"OnlineConsultation"
+
 
   ngOnInit(): void { }
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 }

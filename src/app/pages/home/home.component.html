@@ -1,7 +1,17 @@
+<ngb-carousel style="background-color: #cceffc;">
 
+    <ng-template ngbSlide *ngFor="let item of images">
+
+      <div>
+        <img src="{{item}}" alt="image slider">
+      </div>
+
+    </ng-template>
+    
+</ngb-carousel>
 
 <div class="booking_cards">
-    <h1>Wanna Book For Some</h1>
+    <h1>Book Here</h1>
     <div class="sub_booking_cards">
         <div class="booking_card" *ngFor="let item of bookings">
             <h2>{{item.title}}</h2>
