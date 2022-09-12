@@ -1,0 +1,61 @@
+*{
+    text-align: center;
+}
+.flexForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: auto;
+    width: 50%;
+}
+
+mat-form-field {
+    margin: 20px;
+}
+
+.messageBox {
+    height: 300px;
+    width: 100%;
+}
+
+.radio {
+    display: inline-flex;
+    text-align: center;
+    overflow: hidden;
+}
+
+.radioInput {
+    visibility: hidden;
+}
+
+.radioLable {
+    padding: 10px;
+    background-color: whitesmoke;
+    font-size: 12px;
+    margin: 5px;
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.radioInput:checked+.radioLable {
+    background-color: white;
+    background-color: #7ad5f6;
+}
+
+.radioLable span {
+    color: gainsboro;
+}
+
+.bookingpart {
+    background-color: whitesmoke;
+    padding: 10%;
+    border-radius: 20px;
+}
+
+.level_btn_container{
+    background-color: white;
+}

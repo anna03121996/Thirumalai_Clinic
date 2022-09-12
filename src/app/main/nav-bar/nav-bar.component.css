@@ -1,4 +1,9 @@
-
+mat-toolbar{
+    width: 100%;
+    height: auto;
+    margin: 2% 0;
+    padding: 1% 0;
+}
 
 mat-toolbar a{
     color: #237e9f;

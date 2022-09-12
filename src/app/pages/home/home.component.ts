@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   images = [
-      'assets/images/sliderImg1.webp', 
-      'assets/images/sliderImg2.webp', 
-      'assets/images/sliderImg3.webp', 
-      'assets/images/sliderImg4.webp'
-      ];
+      {image:'assets/images/sliderImg1.webp', heading:'Good Service'}, 
+      {image:'assets/images/sliderImg2.webp', heading:'Best Treatment'},
+      {image:'assets/images/sliderImg3.webp', heading:'Feel Better'}, 
+      {image:'assets/images/sliderImg4.webp', heading:'Time and Quality'},
+    ];
   constructor() { }
 
   bookings = [
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-
+  public isCollapsed = false;
 
   ngOnInit(): void { }
 }

@@ -3,7 +3,12 @@
     <ng-template ngbSlide *ngFor="let item of images">
 
       <div>
-        <img src="{{item}}" alt="image slider">
+        <img src="{{item.image}}" alt="image slider">
+      </div>
+
+      <div class="carousel-caption">
+        <h1>{{item.heading}}</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
 
     </ng-template>
@@ -15,12 +20,19 @@
     <div class="sub_booking_cards flex">
         <div class="booking_card" *ngFor="let item of bookings">
             <h2>{{item.title}}</h2>
-            <a routerLink="{{item.route}}" mat-raised-button>Book</a>
+            <a routerLink="{{item.route}}" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+            aria-controls="collapseExample" mat-raised-button>Book</a>
         </div>
     </div>
 </div>
 
-<router-outlet></router-outlet>
+<div class="cardsContainer" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="card">
+        <div class="card-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
 
 <div class="homeContent_1 flex">
 
@@ -36,4 +48,10 @@
         <img src="assets/images/contentImg1.jpg" alt="content image">
     </div>
 
+</div>
+
+<div class="homeContent_2 flex">
+    <div></div>
+    <div></div>
+    <div></div>
 </div>

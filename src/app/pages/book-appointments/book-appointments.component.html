@@ -1,1 +1,150 @@
-<p>book-appointments works!</p>
+<div *ngIf="bookingBox">
+
+    <mat-toolbar class="flex" style="background-color: #237e9f; margin: 20px;"><span>BooK Your Apponintment</span>
+    </mat-toolbar><br>
+
+    <div class="flexForm">
+
+        <mat-tab-group>
+
+            <mat-tab label="First">
+                <div>
+                    <div class="flex">
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>First name</mat-label>
+                            <input #fname matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Last name</mat-label>
+                            <input #lname matInput>
+                        </mat-form-field>
+
+                    </div>
+
+                    <div class="flex">
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>Seletc Gender</mat-label>
+                            <mat-select #gender>
+                                <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                                    {{gender.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Age</mat-label>
+                            <input #age type="number" matInput>
+                        </mat-form-field>
+
+
+
+                    </div>
+
+                    <div class="flex">
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Mail</mat-label>
+                            <input #mail type="email" matInput>
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Ph.no</mat-label>
+                            <input #phno type="number" matInput>
+                        </mat-form-field>
+
+                    </div>
+
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Second">
+                <div>
+
+                    <br><br>
+                    <div>
+                        <div class="bookingpart">
+                            <h1>{{thisMonth}}, {{thisYear}}</h1><br>
+
+                            <div class="radio" *ngFor="let i of nextSixDays">
+
+                                <input type="radio" class="radioInput" value="{{i.date}}-{{i.day}}" name="bookingDay"
+                                    id="{{i.id}}">
+
+                                <label class="radioLable" for="{{i.id}}">
+
+                                    <span>{{i.day}}</span><br><br>
+                                    <b>{{i.date}}</b>
+
+                                </label>
+
+                            </div>
+
+                        </div><br><br>
+
+                        <div class="bookingpart">
+
+                            <h1>Time</h1><br>
+                            <div class="radio">
+
+                                <div *ngFor="let i of timing">
+
+                                    <input type="radio" (change)="getValue($event)" class="radioInput"
+                                        name="bookingTime" id="{{i}}" value="{{i}}">
+                                    <label class="radioLable" for="{{i}}">
+
+                                        <b>{{i}}</b>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Third">
+                <div>
+
+                    <br><br>
+                    <img src="../../../assets/images/medical_appointment.png" alt="" style="width: 30%; height:auto;">
+                    <br><br>
+
+                    <div>
+                        <div *ngFor="let i of bookingFor" style="display: inline-flex;">
+                            <input type="radio" class="radioInput" name="bookingFor" id="{{i.depart}}"
+                                value="{{i.depart}}">
+                            <label class="radioLable" for="{{i.depart}}" style="height: 100px; width: 100px;">
+
+                                <b> {{i.depart}} </b><br><br>
+                                <span>{{selectedTime}} - {{i.eat}}</span>
+
+                            </label>
+                        </div>
+
+                        <mat-toolbar class="level_btn_container">
+                            <span class="example-spacer"></span>
+                            <button mat-button (click)="action()">Book</button>
+                        </mat-toolbar>
+                    </div>
+                    <br><br>
+
+                </div>
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </div>
+
+</div>
+
+<div *ngIf="messageBox" class="messageBox flex">
+    <h1>{{message}}</h1>
+</div>

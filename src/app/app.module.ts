@@ -19,6 +19,13 @@ import { OnlineConsultationComponent } from './book/online-consultation/online-c
 import { HealthCheckComponent } from './book/health-check/health-check.component';
 import { BuyMedicineComponent } from './book/buy-medicine/buy-medicine.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ContactUsComponent,
     OnlineConsultationComponent,
     HealthCheckComponent,
-    BuyMedicineComponent
+    BuyMedicineComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatSlideToggleModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
