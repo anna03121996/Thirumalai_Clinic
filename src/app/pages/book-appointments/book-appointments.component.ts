@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-book-appointments',
   templateUrl: './book-appointments.component.html',
   styleUrls: ['./book-appointments.component.css']
 })
-export class BookAppointmentsComponent implements OnInit {
+export class BookAppointmentsComponent {
 
   genders = [
     { value: 'male', viewValue: 'Male' },
     { value: 'female', viewValue: 'Female' }
   ];
+
+  model!: NgbDateStruct;
 
   d = new Date();
 
@@ -45,9 +48,6 @@ export class BookAppointmentsComponent implements OnInit {
   ];
 
   timing = ['09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM'];
-  constructor() { }
-
-  ngOnInit(): void { }
 
   bookingBox = true;
   messageBox = false;

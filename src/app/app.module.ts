@@ -26,6 +26,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     ContactUsComponent,
     OnlineConsultationComponent,
     HealthCheckComponent,
-    BuyMedicineComponent,
+    BuyMedicineComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSelectModule,
     MatRadioModule,
     MatSlideToggleModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

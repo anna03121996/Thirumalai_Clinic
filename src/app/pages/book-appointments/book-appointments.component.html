@@ -1,145 +1,235 @@
-<div *ngIf="bookingBox">
+<div *ngIf="bookingBox" class="booking_form">
 
-    <mat-toolbar class="flex" style="background-color: #237e9f; margin: 20px;"><span>BooK Your Apponintment</span>
+    <br><br>
+
+    <mat-toolbar class="flex" style="background-color: #237e9f; margin: 20px; width: 98%;"><span>BooK Your
+            Apponintment</span>
     </mat-toolbar><br>
 
-    <div class="flexForm">
+    <div>
 
-        <mat-tab-group>
 
-            <mat-tab label="First">
-                <div>
-                    <div class="flex">
+        <div class="flex">
 
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>First name</mat-label>
-                            <input #fname matInput>
-                        </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>First name</mat-label>
+                <input matInput>
+            </mat-form-field>
 
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Last name</mat-label>
-                            <input #lname matInput>
-                        </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Last name</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+        </div>
+
+        <div class="flex">
+
+            <mat-form-field style="transform: translateX(-7%);" appearance="fill">
+                <mat-label>Seletc Gender</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                        {{gender.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> -->
+
+            <input type="date" name="" id="">
+            
+        </div>
+
+        <div class="flex">
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Mail</mat-label>
+                <input #mail type="email" matInput>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Ph.no</mat-label>
+                <input #phno type="number" matInput>
+            </mat-form-field>
+
+        </div><br><br>
+
+        <div class="flex" style="align-items:flex-start">
+
+            <div>
+                <div class="bookingpart bk1">
+
+                    <br>
+                    <h1>{{thisMonth}}, {{thisYear}}</h1>
+
+                    <div class="radio" *ngFor="let i of nextSixDays">
+
+                        <input type="radio" class="radioInput" value="{{i.date}}-{{i.day}}" name="bookingDay"
+                            id="{{i.id}}">
+
+                        <label class="radioLable" for="{{i.id}}">
+
+                            <span>{{i.day}}</span><br><br>
+                            <b>{{i.date}}</b>
+
+                        </label>
 
                     </div>
 
-                    <div class="flex">
+                </div> <br>
 
-                        <mat-form-field appearance="fill">
-                            <mat-label>Seletc Gender</mat-label>
-                            <mat-select #gender>
-                                <mat-option *ngFor="let gender of genders" [value]="gender.value">
-                                    {{gender.viewValue}}
-                                </mat-option>
-                            </mat-select>
-                        </mat-form-field>
+                <div class="bookingpart">
 
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Age</mat-label>
-                            <input #age type="number" matInput>
-                        </mat-form-field>
+                    <br>
+                    <h1>Time</h1>
 
+                    <div class="radio">
 
+                        <div>
 
-                    </div>
+                            <div>
+                                <input type="radio" (change)="getValue($event)" class="radioInput" name="bookingTime"
+                                    id="{{timing[0]}}" value="{{timing[0]}}">
+                                <label class="radioLable" for="{{timing[0]}}">
 
-                    <div class="flex">
-
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Mail</mat-label>
-                            <input #mail type="email" matInput>
-                        </mat-form-field>
-
-                        <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Ph.no</mat-label>
-                            <input #phno type="number" matInput>
-                        </mat-form-field>
-
-                    </div>
-
-
-                </div>
-            </mat-tab>
-
-            <mat-tab label="Second">
-                <div>
-
-                    <br><br>
-                    <div>
-                        <div class="bookingpart">
-                            <h1>{{thisMonth}}, {{thisYear}}</h1><br>
-
-                            <div class="radio" *ngFor="let i of nextSixDays">
-
-                                <input type="radio" class="radioInput" value="{{i.date}}-{{i.day}}" name="bookingDay"
-                                    id="{{i.id}}">
-
-                                <label class="radioLable" for="{{i.id}}">
-
-                                    <span>{{i.day}}</span><br><br>
-                                    <b>{{i.date}}</b>
+                                    <b>{{timing[0]}}</b>
 
                                 </label>
-
                             </div>
 
-                        </div><br><br>
+                            <div>
+                                <input type="radio" (change)="getValue($event)" class="radioInput" name="bookingTime"
+                                    id="{{timing[1]}}" value="{{timing[1]}}">
+                                <label class="radioLable" for="{{timing[1]}}">
 
-                        <div class="bookingpart">
+                                    <b>{{timing[1]}}</b>
 
-                            <h1>Time</h1><br>
-                            <div class="radio">
+                                </label>
+                            </div>
 
-                                <div *ngFor="let i of timing">
+                            <div>
+                                <input type="radio" (change)="getValue($event)" class="radioInput" name="bookingTime"
+                                    id="{{timing[2]}}" value="{{timing[2]}}">
+                                <label class="radioLable" for="{{timing[2]}}">
 
-                                    <input type="radio" (change)="getValue($event)" class="radioInput"
-                                        name="bookingTime" id="{{i}}" value="{{i}}">
-                                    <label class="radioLable" for="{{i}}">
+                                    <b>{{timing[2]}}</b>
 
-                                        <b>{{i}}</b>
-
-                                    </label>
-
-                                </div>
-
+                                </label>
                             </div>
 
                         </div>
+                        <div style="width:50px"></div>
+                        <div>
+
+                            <div>
+                                <input type="radio" (change)="getValue($event)" class="radioInput" name="bookingTime"
+                                    id="{{timing[3]}}" value="{{timing[3]}}">
+                                <label class="radioLable" for="{{timing[3]}}">
+
+                                    <b>{{timing[3]}}</b>
+
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" (change)="getValue($event)" class="radioInput" name="bookingTime"
+                                    id="{{timing[4]}}" value="{{timing[4]}}">
+                                <label class="radioLable" for="{{timing[4]}}">
+
+                                    <b>{{timing[4]}}</b>
+
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" (change)="getValue($event)" class="radioInput" name="bookingTime"
+                                    id="{{timing[5]}}" value="{{timing[5]}}">
+                                <label class="radioLable" for="{{timing[5]}}">
+
+                                    <b>{{timing[5]}}</b>
+
+                                </label>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
-            </mat-tab>
+            </div>
 
-            <mat-tab label="Third">
+            <div class="flex bookingpart">
+
                 <div>
 
-                    <br><br>
-                    <img src="../../../assets/images/medical_appointment.png" alt="" style="width: 30%; height:auto;">
-                    <br><br>
+                    <div>
+                        <input type="radio" class="radioInput" name="bookingFor" id="{{bookingFor[0].depart}}"
+                            value="{{bookingFor[0].depart}}">
+                        <label class="radioLable" for="{{bookingFor[0].depart}}" style="height: 100px; width: 100px;">
+
+                            <b> {{bookingFor[0].depart}} </b>
+                            <br><br>
+                            <span>{{selectedTime}} - {{bookingFor[0].eat}}</span>
+
+                        </label>
+                    </div>
+
+                    <div style="height: 50px; width:100%"></div>
 
                     <div>
-                        <div *ngFor="let i of bookingFor" style="display: inline-flex;">
-                            <input type="radio" class="radioInput" name="bookingFor" id="{{i.depart}}"
-                                value="{{i.depart}}">
-                            <label class="radioLable" for="{{i.depart}}" style="height: 100px; width: 100px;">
+                        <input type="radio" class="radioInput" name="bookingFor" id="{{bookingFor[1].depart}}"
+                            value="{{bookingFor[1].depart}}">
+                        <label class="radioLable" for="{{bookingFor[1].depart}}" style="height: 100px; width: 100px;">
 
-                                <b> {{i.depart}} </b><br><br>
-                                <span>{{selectedTime}} - {{i.eat}}</span>
+                            <b> {{bookingFor[1].depart}} </b>
+                            <br><br>
+                            <span>{{selectedTime}} - {{bookingFor[1].eat}}</span>
 
-                            </label>
-                        </div>
-
-                        <mat-toolbar class="level_btn_container">
-                            <span class="example-spacer"></span>
-                            <button mat-button (click)="action()">Book</button>
-                        </mat-toolbar>
+                        </label>
                     </div>
-                    <br><br>
 
                 </div>
-            </mat-tab>
 
-        </mat-tab-group>
+                <div>
+
+                    <div>
+                        <input type="radio" class="radioInput" name="bookingFor" id="{{bookingFor[2].depart}}"
+                            value="{{bookingFor[2].depart}}">
+                        <label class="radioLable" for="{{bookingFor[2].depart}}" style="height: 100px; width: 100px;">
+
+                            <b> {{bookingFor[2].depart}} </b><br><br>
+                            <span>{{selectedTime}} - {{bookingFor[2].eat}}</span>
+
+                        </label>
+                    </div>
+
+                    <div style="height: 50px; width:100%"></div>
+
+                    <div>
+                        <input type="radio" class="radioInput" name="bookingFor" id="{{bookingFor[3].depart}}"
+                            value="{{bookingFor[3].depart}}">
+                        <label class="radioLable" for="{{bookingFor[3].depart}}" style="height: 100px; width: 100px;">
+
+                            <b> {{bookingFor[3].depart}} </b>
+                            <br><br>
+                            <span>{{selectedTime}} - {{bookingFor[3].eat}}</span>
+
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button id="bookBtn" mat-button (click)="action()">Book Apponintment</button>
 
     </div>
 
